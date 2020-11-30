@@ -1,24 +1,32 @@
 import java.*;
 
 import java.lang.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HelloWorld1 {
+
     public static void main(String[] args) {
-        //System.out.println("15 + 3 = " + add(15, 3));
+          Scanner scan = new Scanner(System.in);
 
-        Scanner scan = new Scanner(System.in);
-        //scan.close();
-        Scanner scan1 = new Scanner(System.in);
-        String s = scan1.nextLine();
+          ArrayList<Person> m = new ArrayList<Person>(10);
 
-        System.out.println(s);
+          for (int i = 30; i < 35; i++) {
+              Person p = new Person("Michael", "Semenov", "",
+                      i);
+              m.add(p);
+          }
+
+          for (int i = 35; i < 40; i++) {
+            Student s = new Student("Michael", "Semenov", "Sergeevich",
+                    i, 5, 4.5);
+              m.add((Person)s);
+            }
+
+        for (int i = 0; i < m.size(); i++) {
+            m.get(i).print();
+        }
     }
 
-    public static int add(int a, int b)
-    {
 
-        boolean ab =true;
-        return a + b;
-    }
 }
